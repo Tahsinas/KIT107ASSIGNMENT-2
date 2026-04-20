@@ -11,11 +11,11 @@
 public class Cluster implements ClusterInterface
 {
     // final instance variables
-COMPLETE ME!
+	// none 
 
     
     // instance variables
-COMPLETE ME!
+protected Node firstPlayer;
 
 
 	/**
@@ -28,7 +28,7 @@ COMPLETE ME!
 	 */
     public Cluster()
     {
-COMPLETE ME!
+firstPlayer = null;
     }
 
 	/**
@@ -43,7 +43,7 @@ COMPLETE ME!
 	 */
     public boolean isEmpty()
     {
-COMPLETE ME! // to get past the compiler, use: return true;
+return firstPlayer == null; // to get past the compiler, use: return true;
     }
 
     /**
@@ -74,8 +74,15 @@ COMPLETE ME!
 	 */
     public Player getFirstPlayer()
     {
-COMPLETE ME! // to get past the compiler, use: return null;
-    }
+if (isEmpty())
+	{
+		return null;
+	}
+	else
+	{
+		return(Player) firstPlayer.getData();
+	}
+	} // to get past the compiler, use: return null;
 
    /**
 	 * countPlayers()
