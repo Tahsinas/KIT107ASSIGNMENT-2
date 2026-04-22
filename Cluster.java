@@ -59,7 +59,45 @@ return firstPlayer == null; // to get past the compiler, use: return true;
 	 */
     public void addPlayerToCluster(Player p)
     {
-COMPLETE ME!
+Node current;
+Node previous;
+Node newNode;
+Player currentPlayer;
+int comparison;
+
+current = firstPlayer;
+previous = null;
+
+while (current != null)
+{
+	currentPlayer = (Player) current.getData();
+	comparison = currentPlayer.getName().compareToIgnoreCase(p.getName());
+
+	if (comparison == 0)
+	{
+		currentPlayer.update(p);
+		return;
+	}
+	else if (comparison > 0)
+	{
+		break;
+	}
+	previous = current;
+	current = current.getNext();
+
+}
+newNode = new Node(p);
+newNode.setNext(current);
+if (previous == null)
+{
+	firstPlayer = newNode;
+
+}
+else
+{
+	previous.setNext(newNode);
+	
+}
     }
 
  	/**
