@@ -134,7 +134,19 @@ if (isEmpty())
 	 */
     public int countPlayers()
     {
-COMPLETE ME! // to get past the compiler, use: return 0;
+Node current;
+    int count;
+
+    current = firstPlayer;
+    count = 0;
+
+    while (current != null)
+    {
+        count++;
+        current = current.getNext();
+    }
+
+    return count;
     }
 
     /**
@@ -188,6 +200,18 @@ COMPLETE ME! // to get past the compiler, use: return "";
 	 */
     public String toString()
     {
-COMPLETE ME! // to get past the compiler, use: return "";
+Node current;
+    String result;
+
+    current = firstPlayer;
+    result = "";
+
+    while (current != null)
+    {
+        result = result + current.getData().toString() + "\n";
+        current = current.getNext();
+    }
+
+    return result;
     }
 }
