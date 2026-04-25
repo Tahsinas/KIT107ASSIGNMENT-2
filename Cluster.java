@@ -168,7 +168,55 @@ Node current;
 	 */
     public Player most(char x)
     {
-COMPLETE ME! // to get past the compiler, use: return null;
+Node current;
+    Player currentPlayer;
+    Player maxPlayer;
+    int currentValue;
+    int maxValue;
+
+    current = firstPlayer;
+    maxPlayer = null;
+    maxValue = -1;
+
+    while (current != null)
+    {
+        currentPlayer = (Player) current.getData();
+
+        if (x == 'g')
+        {
+            currentValue = currentPlayer.getGoals();
+        }
+        else if (x == 'd')
+        {
+            currentValue = currentPlayer.getDisposals();
+        }
+        else if (x == 'c')
+        {
+            currentValue = currentPlayer.getClangers();
+        }
+        else if (x == 'a')
+        {
+            currentValue = currentPlayer.getFreesAgainst();
+        }
+        else if (x == 'm')
+        {
+            currentValue = currentPlayer.getGames();
+        }
+        else
+        {
+            currentValue = -1;
+        }
+
+        if (currentValue >= maxValue)
+        {
+            maxValue = currentValue;
+            maxPlayer = currentPlayer;
+        }
+
+        current = current.getNext();
+    }
+
+    return maxPlayer;
     }
 
     /**
