@@ -64,7 +64,35 @@ protected int countTeams;
 	 */
     public void addPlayerToCollection(Player p)
     {
-COMPLETE ME!
+int position;
+    int i;
+    String team;
+
+    team = p.getTeam();
+    position = 0;
+
+    while (position < countTeams && teamNames[position].compareToIgnoreCase(team) < 0)
+    {
+        position++;
+    }
+
+    if (position < countTeams && teamNames[position].equalsIgnoreCase(team))
+    {
+        items[position].addPlayerToCluster(p);
+    }
+    else
+    {
+        for (i = countTeams; i > position; i--)
+        {
+            items[i] = items[i - 1];
+            teamNames[i] = teamNames[i - 1];
+        }
+
+        items[position] = new Cluster();
+        teamNames[position] = team;
+        items[position].addPlayerToCluster(p);
+        countTeams++;
+    }
     }
 
     /**
