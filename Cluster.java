@@ -231,7 +231,29 @@ Node current;
 	 */
     public String summary()
     {
-COMPLETE ME! // to get past the compiler, use: return "";
+public String summary()
+{
+    Node current;
+    Player total;
+
+    if (isEmpty())
+    {
+        return "";
+    }
+
+    current = firstPlayer;
+    total = (Player) current.getData();
+
+    current = current.getNext();
+
+    while (current != null)
+    {
+        total.update((Player) current.getData());
+        current = current.getNext();
+    }
+
+    return total.toString();
+}
     }
 
 	/**
