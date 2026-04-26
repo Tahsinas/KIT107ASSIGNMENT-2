@@ -11,11 +11,13 @@
 public class Collection implements CollectionInterface
 {
     // final instance variables
-COMPLETE ME!
+protected final int MAX_TEAMS = 18;
 
     
     // instance variables
-COMPLETE ME!
+protected Cluster[] items;
+protected String[] teamNames;
+protected int countTeams;
 
     
 	/**
@@ -28,7 +30,9 @@ COMPLETE ME!
 	 */
     public Collection()
     {
-COMPLETE ME!
+        items = new Cluster[MAX_TEAMS];
+        teamNames = new String[MAX_TEAMS];
+        countTeams = 0;
     }
 
 	/**
@@ -43,7 +47,7 @@ COMPLETE ME!
 	 */
     public boolean isEmpty()
     {
-COMPLETE ME! // to get past the compiler, use: return true;
+  return countTeams == 0;
     }
 
     /**
