@@ -109,7 +109,30 @@ int position;
 	 */
     public void showPlayerHistogram()
     {
-COMPLETE ME!
+ int i;
+    int j;
+    int count;
+
+    if (isEmpty())
+    {
+        System.out.println("No data!");
+    }
+    else
+    {
+        for (i = 0; i < countTeams; i++)
+        {
+            count = items[i].countPlayers();
+
+            System.out.print(teamNames[i] + ": ");
+
+            for (j = 0; j < count; j++)
+            {
+                System.out.print("*");
+            }
+
+            System.out.println(" " + count);
+        }
+    }
     }
 
     /**
