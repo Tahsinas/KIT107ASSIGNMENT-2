@@ -154,7 +154,67 @@ int position;
      */
     public String most(char x)
     {
-COMPLETE ME! // to get past the compiler, use: return "";
+    int i;
+    Player currentPlayer;
+    Player maxPlayer;
+    int currentValue;
+    int maxValue;
+
+    if (isEmpty())
+    {
+        return "No data!";
+    }
+
+    maxPlayer = null;
+    maxValue = -1;
+
+    for (i = 0; i < countTeams; i++)
+    {
+        currentPlayer = items[i].most(x);
+
+        if (currentPlayer != null)
+        {
+            if (x == 'g')
+            {
+                currentValue = currentPlayer.getGoals();
+            }
+            else if (x == 'd')
+            {
+                currentValue = currentPlayer.getDisposals();
+            }
+            else if (x == 'c')
+            {
+                currentValue = currentPlayer.getClangers();
+            }
+            else if (x == 'a')
+            {
+                currentValue = currentPlayer.getFreesAgainst();
+            }
+            else if (x == 'm')
+            {
+                currentValue = currentPlayer.getGames();
+            }
+            else
+            {
+                currentValue = -1;
+            }
+
+            if (currentValue >= maxValue)
+            {
+                maxValue = currentValue;
+                maxPlayer = currentPlayer;
+            }
+        }
+    }
+
+    if (maxPlayer == null)
+    {
+        return "No data!";
+    }
+    else
+    {
+        return maxPlayer.toString();
+    }
     }
 
     /**
