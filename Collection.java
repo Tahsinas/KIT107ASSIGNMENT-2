@@ -235,7 +235,31 @@ int position;
 	 */
     public void summarise(String t)
     {
-COMPLETE ME! 
+int i;
+    boolean found;
+
+    if (isEmpty())
+    {
+        System.out.println("No data!");
+    }
+    else
+    {
+        found = false;
+
+        for (i = 0; i < countTeams; i++)
+        {
+            if (teamNames[i].equalsIgnoreCase(t))
+            {
+                System.out.println(items[i].summary());
+                found = true;
+            }
+        }
+
+        if (!found)
+        {
+            System.out.println("Team (" + t + ") not found!");
+        }
+    }
     }
 
 	/**
