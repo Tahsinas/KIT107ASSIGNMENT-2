@@ -252,6 +252,16 @@ COMPLETE ME!
 	 */
     public String toString()
     {
-COMPLETE ME! // to get past the compiler, use: return "";
+int i;
+    String result;
+
+    result = "";
+
+    for (i = 0; i < countTeams; i++)
+    {
+        result = result + items[i].toString();
+    }
+
+    return result;
     }
 }
