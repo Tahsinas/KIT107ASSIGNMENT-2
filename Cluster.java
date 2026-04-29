@@ -231,8 +231,6 @@ Node current;
 	 */
     public String summary()
     {
-public String summary()
-{
     Node current;
     Player total;
 
@@ -242,9 +240,12 @@ public String summary()
     }
 
     current = firstPlayer;
-    total = (Player) current.getData();
+    total = new Player(
+        ((Player) current.getData()).getTeam(),
+        "Team Total",
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.0
+    );
 
-    current = current.getNext();
 
     while (current != null)
     {
@@ -253,8 +254,8 @@ public String summary()
     }
 
     return total.toString();
-}
     }
+    
 
 	/**
 	 * toString()
