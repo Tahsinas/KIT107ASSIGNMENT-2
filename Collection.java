@@ -3,8 +3,8 @@
  * 
  * KIT107 Assignment 2 -- Collection Implementation
  * 
- * @author <<your name and student ID number>>
- * @version	<<date of completion>>
+ * @author <<Tahsin Ahmed Siddiquee-236760>>
+ * @version	<<30/4/2026>>
  */
 
 
