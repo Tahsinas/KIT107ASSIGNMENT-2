@@ -4,7 +4,7 @@
  * KIT107 Assignment 2 -- Cluster Implementation
  * 
  * @author <<Tahsin Ahmed Siddiquee-236760>>
- * @version	<<30/4/2026>>
+ * @version	30/4/2026
  */
 
 
